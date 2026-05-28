@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    min-height: max(884px, 100dvh);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 24px rgba(139, 92, 246, 0.05);
+  }
+  .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .mesh-gradient {
+      background: radial-gradient(at 0% 0%, rgba(107, 56, 212, 0.05) 0px, transparent 50%),
+                  radial-gradient(at 100% 0%, rgba(180, 19, 109, 0.05) 0px, transparent 50%),
+                  radial-gradient(at 100% 100%, rgba(0, 93, 168, 0.05) 0px, transparent 50%);
+  }
+  .bg-mesh {
+      background-color: #f9f9fa;
+      background-image: 
+          radial-gradient(at 0% 0%, rgba(107, 56, 212, 0.05) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(180, 19, 109, 0.05) 0px, transparent 50%);
+  }
+  .glass-input {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .glass-pane {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .liquid-progress {
+      background: linear-gradient(90deg, #6b38d4, #fd56a7);
+  }
+  .scan-line {
+      height: 2px;
+      background: linear-gradient(to right, transparent, #6b38d4, transparent);
+      box-shadow: 0 0 15px #6b38d4;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+  }
+  .gradient-bg {
+      background: linear-gradient(135deg, #f9f9fa 0%, #e9ddff 50%, #ffd9e4 100%);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+  }
+  
+  @keyframes scan {
+      0%, 100% { top: 10%; opacity: 0; }
+      10% { opacity: 1; }
+      50% { top: 90%; opacity: 1; }
+      90% { opacity: 0; }
+  }
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+  }
+  .bg-blob {
+      position: fixed;
+      z-index: -1;
+      filter: blur(80px);
+      opacity: 0.4;
+      border-radius: 50%;
+  }
+  .blob-1 { width: 500px; height: 500px; background: #d0bcff; top: -100px; right: -100px; }
+  .blob-2 { width: 400px; height: 400px; background: #ffb0cd; bottom: -50px; left: -50px; }
+  .blob-3 { width: 300px; height: 300px; background: #d4e3ff; top: 40%; left: 10%; }
+  
+  .liquid-progress {
+      background: linear-gradient(90deg, #6b38d4 0%, #b4136d 100%);
+  }
+}
